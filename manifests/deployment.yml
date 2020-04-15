@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "kubernetesenv"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kubernetesenv"
+    spec:
+      containers:
+        - name: "kubernetesenv"
+          image: "testingdockerization.azurecr.io/kubernetesenv"
+          ports:
+          - containerPort: 8080
